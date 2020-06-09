@@ -35,7 +35,7 @@ function counter(state = initializeState, action) {
                         ...counters[action.index],
                         number: counters[action.index].number + 1
                     },
-                    ...counters.slice(action.index, counters.length)
+                    ...counters.slice(action.index+1, counters.length)
                 ]
             };
 
@@ -47,7 +47,7 @@ function counter(state = initializeState, action) {
                         ...counters[action.index],
                         number: counters[action.index].number - 1
                     },
-                    ...counters.slice(action.index, counters.length)
+                    ...counters.slice(action.index + 1, counters.length)
                 ]
             };
 
@@ -59,7 +59,7 @@ function counter(state = initializeState, action) {
                         ...counters[action.index],
                         color: action.color
                     },
-                    ...counters.slice(action.index, counters.length)
+                    ...counters.slice(action.index + 1, counters.length)
                 ]
             };
         default:
